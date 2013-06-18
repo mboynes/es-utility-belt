@@ -40,7 +40,7 @@ $(function(){
 		var id = $(this).data('id');
 		if ( req_history && req_history[id] ) {
 			$('#request_url').val( req_history[id].url );
-			$('#request_body').val( req_history[id].body );
+			editor.setValue( req_history[id].body );
 		}
 	});
 

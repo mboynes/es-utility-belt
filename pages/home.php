@@ -12,7 +12,8 @@
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="code">Request Body</label>
-							<div class="controls">
+							<div class="controls" id="editor_wrap">
+								<div id="editor" rows="8" cols="40"></div>
 								<textarea name="body" id="request_body" rows="8" cols="40" class="span6"></textarea>
 							</div>
 						</div>

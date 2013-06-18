@@ -24,7 +24,18 @@ function get_header( $title = 'Elasticsearch Utility Belt' ) {
 		@media (max-width:979px) { body { padding-top: 0; } }
 		code { color: black; }
 		.caret-up { border-top: 0; border-bottom: 4px solid #000000; }
-	</style>
+		#editor_wrap {
+			position: relative;
+			height: 400px;
+		}
+		#editor {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		</style>
 	<script type="text/javascript">var PATH = '<?php echo ES_PATH ?>';</script>
 </head>
 <body>
@@ -70,6 +81,24 @@ function get_footer() {
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo ES_PATH ?>assets/application.js"></script>
+	<script type="text/javascript" src="<?php echo ES_PATH ?>assets/ace/ace.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		var editor = ace.edit("editor");
+		$(function(){
+			$('#request_body').hide();
+			editor.setTheme("ace/theme/twilight");
+			editor.getSession().setMode("ace/mode/json");
+			editor.getSession().setTabSize(2);
+			editor.getSession().setUseSoftTabs(false);
+			editor.setReadOnly(false);
+			editor.getSession().setUseWrapMode(true);
+			editor.getSession().setValue($('#request_body').val());
+			editor.getSession().on('change', function(){
+				$('#request_body').val(editor.getSession().getValue());
+			});
+		});
+	</script>
+
 </body>
 </html>
 <?php
