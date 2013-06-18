@@ -24,7 +24,7 @@ This application allows you to run arbitrary elasticsearch queries and is intend
 
 ## Copyright and license
 
-Copyright 2012 Matthew Boynes
+Copyright 2013 Matthew Boynes
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this work except in compliance with the License.
